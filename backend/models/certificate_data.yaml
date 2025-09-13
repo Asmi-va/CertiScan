@@ -1,0 +1,7 @@
+names:
+- degree
+- signature
+- stamp
+nc: 3
+train: C:\Users\vashi\Desktop\sih\dataset\train
+val: C:\Users\vashi\Desktop\sih\dataset\val

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Certificate Verification Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        main {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .nav-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none;
+            color: #333;
+        }
+        .nav-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .nav-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #007bff;
+        }
+        .nav-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .nav-desc {
+            font-size: 1rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Certificate Verification Portal</h1>
+        <p>Unified access to all certificate verification tools and dashboards</p>
+    </header>
+    <main>
+        <div class="nav-grid">
+            <a href="public-verification.html" class="nav-card" title="Public Verification">
+                <div class="nav-icon">🔍</div>
+                <div class="nav-title">Public Verification</div>
+                <div class="nav-desc">Verify certificates manually or by upload</div>
+            </a>
+            <a href="government-dashboard.html" class="nav-card" title="Government Dashboard">
+                <div class="nav-icon">🏛️</div>
+                <div class="nav-title">Government Dashboard</div>
+                <div class="nav-desc">Access government verification and analytics</div>
+            </a>
+            <a href="employer-interface.html" class="nav-card" title="Employer Interface">
+                <div class="nav-icon">💼</div>
+                <div class="nav-title">Employer Interface</div>
+                <div class="nav-desc">Employer certificate verification tools</div>
+            </a>
+            <a href="institution-portal.html" class="nav-card" title="Institution Portal">
+                <div class="nav-icon">🎓</div>
+                <div class="nav-title">Institution Portal</div>
+                <div class="nav-desc">Institutional certificate management and verification</div>
+            </a>
+            <a href="index.html" class="nav-card" title="Tamper Detection">
+                <div class="nav-icon">🛡️</div>
+                <div class="nav-title">Tamper Detection</div>
+                <div class="nav-desc">AI-powered certificate tamper detection</div>
+            </a>
+        </div>
+    </main>
+</body>
+</html>
