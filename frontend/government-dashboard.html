@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Dashboard - Certificate Monitoring System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+        .alert-critical { animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="gradient-bg shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-white text-xl font-bold">
+                            <i class="fas fa-landmark mr-2"></i>Government Dashboard
+                        </h1>
+                        <p class="text-red-200 text-sm">Ministry of Education, Government of India</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="text-white text-right">
+                        <p class="font-medium">Dr. Anita Sharma</p>
+                        <p class="text-red-200 text-sm">Joint Secretary</p>
+                    </div>
+                    <button class="bg-white bg-opacity-20 text-white px-4 py-2 rounded-lg hover:bg-opacity-30 transition">
+                        <i class="fas fa-bell mr-2"></i>Alerts <span class="bg-red-500 text-xs px-2 py-1 rounded-full ml-1">3</span>
+                    </button>
+                    <button class="bg-white bg-opacity-20 text-white px-4 py-2 rounded-lg hover:bg-opacity-30 transition">
+                        <i class="fas fa-cog mr-2"></i>Settings
+                    </button>
+                    <button class="bg-white bg-opacity-20 text-white px-4 py-2 rounded-lg hover:bg-opacity-30 transition">
+                        <i class="fas fa-sign-out-alt mr-2"></i>Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Alert Banner -->
+    <div class="bg-red-600 text-white px-4 py-2 alert-critical">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center">
+                <i class="fas fa-exclamation-triangle mr-2"></i>
+                <span class="font-medium">CRITICAL ALERT:</span>
+                <span class="ml-2">High fraud activity detected in Maharashtra region - 47 suspicious certificates in last 24 hours</span>
+            </div>
+            <button class="text-red-200 hover:text-white">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <!-- National Statistics -->
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-6 mb-8">
+            <div class="bg-white overflow-hidden shadow rounded-lg card-hover">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-university text-3xl text-blue-500"></i>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">Registered Institutions</dt>
+                                <dd class="text-lg font-medium text-gray-900">2,847</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white overflow-hidden shadow rounded-lg card-hover">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-certificate text-3xl text-green-500"></i>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">Total Certificates</dt>
+                                <dd class="text-lg font-medium text-gray-900">15.2M</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white overflow-hidden shadow rounded-lg card-hover">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-search text-3xl text-purple-500"></i>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">Daily Verifications</dt>
+                                <dd class="text-lg font-medium text-gray-900">47,234</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white overflow-hidden shadow rounded-lg card-hover">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-shield-alt text-3xl text-yellow-500"></i>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">Fraud Detection Rate</dt>
+                                <dd class="text-lg font-medium text-gray-900">94.7%</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white overflow-hidden shadow rounded-lg card-hover">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-exclamation-triangle text-3xl text-red-500"></i>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">Active Fraud Cases</dt>
+                                <dd class="text-lg font-medium text-gray-900">1,247</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Dashboard -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+            <!-- Fraud Monitoring -->
+            <div class="lg:col-span-2 bg-white shadow rounded-lg card-hover">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-medium text-gray-900">
+                            <i class="fas fa-radar-chart mr-2 text-red-500"></i>Real-Time Fraud Monitoring
+                        </h3>
+                        <div class="flex space-x-2">
+                            <select class="border border-gray-300 rounded-lg px-3 py-1 text-sm">
+                                <option>Last 24 Hours</option>
+                                <option>Last 7 Days</option>
+                                <option>Last 30 Days</option>
+                            </select>
+                            <button class="bg-red-500 text-white px-3 py-1 rounded-lg text-sm hover:bg-red-600 transition">
+                                <i class="fas fa-sync mr-1"></i>Refresh
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <!-- Fraud Alerts -->
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-red-500 bg-red-50 p-4 rounded-r-lg">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>
+                                        <h4 class="font-medium text-red-800">Critical Fraud Pattern Detected</h4>
+                                        <span class="ml-2 bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs">CRITICAL</span>
+                                    </div>
+                                    <p class="text-red-700 text-sm mt-1">Coordinated fraud activity from 15 IP addresses in Mumbai - 127 fake certificates detected</p>
+                                    <p class="text-red-600 text-xs mt-2">Detected: 2 minutes ago • Confidence: 97%</p>
+                                </div>
+                                <button class="text-red-600 hover:text-red-800">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="border-l-4 border-yellow-500 bg-yellow-50 p-4 rounded-r-lg">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-exclamation-triangle text-yellow-500 mr-2"></i>
+                                        <h4 class="font-medium text-yellow-800">Suspicious Institution Activity</h4>
+                                        <span class="ml-2 bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs">HIGH</span>
+                                    </div>
+                                    <p class="text-yellow-700 text-sm mt-1">ABC Engineering College - Unusual certificate issuance pattern (500% increase)</p>
+                                    <p class="text-yellow-600 text-xs mt-2">Detected: 15 minutes ago • Confidence: 84%</p>
+                                </div>
+                                <button class="text-yellow-600 hover:text-yellow-800">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="border-l-4 border-orange-500 bg-orange-50 p-4 rounded-r-lg">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-flag text-orange-500 mr-2"></i>
+                                        <h4 class="font-medium text-orange-800">Grade Inflation Pattern</h4>
+                                        <span class="ml-2 bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs">MEDIUM</span>
+                                    </div>
+                                    <p class="text-orange-700 text-sm mt-1">XYZ University - Suspicious grade distribution in Computer Science department</p>
+                                    <p class="text-orange-600 text-xs mt-2">Detected: 1 hour ago • Confidence: 72%</p>
+                                </div>
+                                <button class="text-orange-600 hover:text-orange-800">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="mt-6 flex space-x-3">
+                        <button class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition flex items-center">
+                            <i class="fas fa-ban mr-2"></i>Block Suspicious IPs
+                        </button>
+                        <button class="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition flex items-center">
+                            <i class="fas fa-flag mr-2"></i>Flag Institution
+                        </button>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition flex items-center">
+                            <i class="fas fa-file-alt mr-2"></i>Generate Report
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Regional Statistics -->
+            <div class="bg-white shadow rounded-lg card-hover">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h3 class="text-lg font-medium text-gray-900">
+                        <i class="fas fa-map-marked-alt mr-2 text-blue-500"></i>Regional Analysis
+                    </h3>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-3 bg-red-50 rounded-lg border border-red-200">
+                            <div>
+                                <p class="font-medium text-red-900">Maharashtra</p>
+                                <p class="text-sm text-red-700">47 fraud cases</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs">HIGH RISK</span>
+                                <p class="text-xs text-red-600 mt-1">↑ 340%</p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center p-3 bg-yellow-50 rounded-lg border border-yellow-200">
+                            <div>
+                                <p class="font-medium text-yellow-900">Karnataka</p>
+                                <p class="text-sm text-yellow-700">23 fraud cases</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="bg-yellow-500 text-white px-2 py-1 rounded-full text-xs">MEDIUM</span>
+                                <p class="text-xs text-yellow-600 mt-1">↑ 120%</p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center p-3 bg-green-50 rounded-lg border border-green-200">
+                            <div>
+                                <p class="font-medium text-green-900">Tamil Nadu</p>
+                                <p class="text-sm text-green-700">8 fraud cases</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="bg-green-500 text-white px-2 py-1 rounded-full text-xs">LOW</span>
+                                <p class="text-xs text-green-600 mt-1">↓ 15%</p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center p-3 bg-blue-50 rounded-lg border border-blue-200">
+                            <div>
+                                <p class="font-medium text-blue-900">Delhi</p>
+                                <p class="text-sm text-blue-700">12 fraud cases</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">NORMAL</span>
+                                <p class="text-xs text-blue-600 mt-1">→ 0%</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="w-full mt-4 bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition">
+                        <i class="fas fa-map mr-2"></i>View Full Map
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Policy and Enforcement -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <!-- Blacklist Management -->
+            <div class="bg-white shadow rounded-lg card-hover">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-medium text-gray-900">
+                            <i class="fas fa-ban mr-2 text-red-500"></i>Blacklist Management
+                        </h3>
+                        <button class="bg-red-500 text-white px-3 py-1 rounded-lg text-sm hover:bg-red-600 transition">
+                            <i class="fas fa-plus mr-1"></i>Add Entry
+                        </button>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                            <div>
+                                <p class="font-medium text-gray-900">Fake Degree Mills Pvt Ltd</p>
+                                <p class="text-sm text-gray-600">Organization • Added: 2024-01-10</p>
+                            </div>
+                            <div class="flex space-x-2">
+                                <button class="text-blue-600 hover:text-blue-800">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="text-red-600 hover:text-red-800">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                            <div>
+                                <p class="font-medium text-gray-900">John Doe (ID: 123456789)</p>
+                                <p class="text-sm text-gray-600">Individual • Added: 2024-01-08</p>
+                            </div>
+                            <div class="flex space-x-2">
+                                <button class="text-blue-600 hover:text-blue-800">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="text-red-600 hover:text-red-800">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                            <div>
+                                <p class="font-medium text-gray-900">Certificate #ABC123XYZ</p>
+                                <p class="text-sm text-gray-600">Certificate • Added: 2024-01-05</p>
+                            </div>
+                            <div class="flex space-x-2">
+                                <button class="text-blue-600 hover:text-blue-800">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="text-red-600 hover:text-red-800">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 text-center">
+                        <p class="text-sm text-gray-500">Total blacklisted entries: 1,247</p>
+                        <button class="text-blue-600 hover:text-blue-800 text-sm mt-1">
+                            View all entries →
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Institution Compliance -->
+            <div class="bg-white shadow rounded-lg card-hover">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h3 class="text-lg font-medium text-gray-900">
+                        <i class="fas fa-clipboard-check mr-2 text-green-500"></i>Institution Compliance
+                    </h3>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-700">Fully Compliant</span>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-32 bg-gray-200 rounded-full h-2">
+                                    <div class="bg-green-500 h-2 rounded-full" style="width: 87%"></div>
+                                </div>
+                                <span class="text-sm text-gray-600">2,477 (87%)</span>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-700">Partial Compliance</span>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-32 bg-gray-200 rounded-full h-2">
+                                    <div class="bg-yellow-500 h-2 rounded-full" style="width: 10%"></div>
+                                </div>
+                                <span class="text-sm text-gray-600">285 (10%)</span>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-700">Non-Compliant</span>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-32 bg-gray-200 rounded-full h-2">
+                                    <div class="bg-red-500 h-2 rounded-full" style="width: 3%"></div>
+                                </div>
+                                <span class="text-sm text-gray-600">85 (3%)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 space-y-2">
+                        <h4 class="font-medium text-gray-900">Recent Actions</h4>
+                        <div class="text-sm space-y-1">
+                            <p class="text-gray-600">• 15 institutions flagged for review</p>
+                            <p class="text-gray-600">• 3 institutions suspended</p>
+                            <p class="text-gray-600">• 42 compliance reports generated</p>
+                        </div>
+                    </div>
+
+                    <button class="w-full mt-4 bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition">
+                        <i class="fas fa-file-alt mr-2"></i>Generate Compliance Report
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Analytics and Trends -->
+        <div class="bg-white shadow rounded-lg">
+            <div class="px-6 py-4 border-b border-gray-200">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-medium text-gray-900">
+                        <i class="fas fa-chart-line mr-2 text-purple-500"></i>National Trends & Analytics
+                    </h3>
+                    <div class="flex space-x-2">
+                        <select class="border border-gray-300 rounded-lg px-3 py-1 text-sm">
+                            <option>Last 30 Days</option>
+                            <option>Last 90 Days</option>
+                            <option>Last Year</option>
+                        </select>
+                        <button class="bg-purple-500 text-white px-4 py-1 rounded-lg text-sm hover:bg-purple-600 transition">
+                            <i class="fas fa-download mr-1"></i>Export
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Fraud Trends Chart -->
+                    <div class="lg:col-span-2">
+                        <h4 class="font-medium text-gray-900 mb-4">Fraud Detection Trends</h4>
+                        <div class="h-64 bg-gray-50 rounded-lg flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="fas fa-chart-area text-4xl text-gray-400 mb-4"></i>
+                                <p class="text-gray-500">Fraud trends chart would be displayed here</p>
+                                <p class="text-sm text-gray-400">Integration with Chart.js or D3.js</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Metrics -->
+                    <div>
+                        <h4 class="font-medium text-gray-900 mb-4">Key Performance Indicators</h4>
+                        <div class="space-y-4">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-blue-900 font-medium">Detection Accuracy</span>
+                                    <span class="text-blue-600 text-lg font-bold">94.7%</span>
+                                </div>
+                                <div class="w-full bg-blue-200 rounded-full h-2 mt-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 94.7%"></div>
+                                </div>
+                            </div>
+
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-green-900 font-medium">Response Time</span>
+                                    <span class="text-green-600 text-lg font-bold">1.2s</span>
+                                </div>
+                                <div class="w-full bg-green-200 rounded-full h-2 mt-2">
+                                    <div class="bg-green-600 h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-purple-900 font-medium">System Uptime</span>
+                                    <span class="text-purple-600 text-lg font-bold">99.9%</span>
+                                </div>
+                                <div class="w-full bg-purple-200 rounded-full h-2 mt-2">
+                                    <div class="bg-purple-600 h-2 rounded-full" style="width: 99.9%"></div>
+                                </div>
+                            </div>
+
+                            <div class="bg-red-50 p-4 rounded-lg">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-red-900 font-medium">False Positive Rate</span>
+                                    <span class="text-red-600 text-lg font-bold">2.1%</span>
+                                </div>
+                                <div class="w-full bg-red-200 rounded-full h-2 mt-2">
+                                    <div class="bg-red-600 h-2 rounded-full" style="width: 2.1%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Real-time updates simulation
+        function updateDashboard() {
+            console.log('Updating government dashboard...');
+            // This would connect to your backend API for real-time data
+        }
+
+        // Alert management
+        function dismissAlert(alertElement) {
+            alertElement.style.display = 'none';
+        }
+
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDashboard();
+            
+            // Set up real-time updates every 30 seconds
+            setInterval(updateDashboard, 30000);
+            
+            // Add click handlers for alert dismissal
+            document.querySelectorAll('.alert-critical button').forEach(button => {
+                button.addEventListener('click', function() {
+                    this.closest('.alert-critical').style.display = 'none';
+                });
+            });
+        });
+
+        // Fraud alert actions
+        function blockSuspiciousIPs() {
+            console.log('Blocking suspicious IP addresses...');
+            // Implementation for blocking IPs
+        }
+
+        function flagInstitution(institutionId) {
+            console.log('Flagging institution:', institutionId);
+            // Implementation for flagging institutions
+        }
+
+        function generateReport(reportType) {
+            console.log('Generating report:', reportType);
+            // Implementation for report generation
+        }
+    </script>
+</body>
+</html>

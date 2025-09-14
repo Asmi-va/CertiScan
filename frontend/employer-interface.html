@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer Portal - Certificate Verification System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="gradient-bg shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-white text-xl font-bold">
+                            <i class="fas fa-building mr-2"></i>Employer Portal
+                        </h1>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-white">Welcome, HR Manager</span>
+                    <button class="bg-white bg-opacity-20 text-white px-4 py-2 rounded-lg hover:bg-opacity-30 transition">
+                        <i class="fas fa-user-circle mr-2"></i>Profile
+                    </button>
+                    <button class="bg-white bg-opacity-20 text-white px-4 py-2 rounded-lg hover:bg-opacity-30 transition">
+                        <i class="fas fa-sign-out-alt mr-2"></i>Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <!-- Dashboard Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white overflow-hidden shadow rounded-lg card-hover">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-certificate text-3xl text-blue-500"></i>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">Total Verifications</dt>
+                                <dd class="text-lg font-medium text-gray-900">1,247</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white overflow-hidden shadow rounded-lg card-hover">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-check-circle text-3xl text-green-500"></i>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">Verified Certificates</dt>
+                                <dd class="text-lg font-medium text-gray-900">1,089</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white overflow-hidden shadow rounded-lg card-hover">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-exclamation-triangle text-3xl text-red-500"></i>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">Flagged Certificates</dt>
+                                <dd class="text-lg font-medium text-gray-900">158</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white overflow-hidden shadow rounded-lg card-hover">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-clock text-3xl text-yellow-500"></i>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">Pending Reviews</dt>
+                                <dd class="text-lg font-medium text-gray-900">23</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Actions -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <!-- Certificate Upload -->
+            <div class="bg-white shadow rounded-lg card-hover">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h3 class="text-lg font-medium text-gray-900">
+                        <i class="fas fa-upload mr-2 text-blue-500"></i>Verify New Certificate
+                    </h3>
+                </div>
+                <div class="p-6">
+                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-blue-400 transition">
+                        <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-4"></i>
+                        <p class="text-gray-600 mb-4">Drag and drop certificate files here, or click to browse</p>
+                        <input type="file" id="certificateUpload" class="hidden" multiple accept=".pdf,.jpg,.jpeg,.png">
+                        <button onclick="document.getElementById('certificateUpload').click()" 
+                                class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition">
+                            Choose Files
+                        </button>
+                    </div>
+                    <div class="mt-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Candidate Information</label>
+                        <div class="grid grid-cols-2 gap-4">
+                            <input type="text" placeholder="Candidate Name" 
+                                   class="border border-gray-300 rounded-lg px-3 py-2 focus:ring-blue-500 focus:border-blue-500">
+                            <input type="text" placeholder="Position Applied" 
+                                   class="border border-gray-300 rounded-lg px-3 py-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                    </div>
+                    <button class="w-full mt-4 bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition">
+                        <i class="fas fa-search mr-2"></i>Start Verification
+                    </button>
+                </div>
+            </div>
+
+            <!-- Batch Verification -->
+            <div class="bg-white shadow rounded-lg card-hover">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h3 class="text-lg font-medium text-gray-900">
+                        <i class="fas fa-layer-group mr-2 text-purple-500"></i>Batch Verification
+                    </h3>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4">Upload multiple certificates for bulk verification</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                            <div>
+                                <p class="font-medium">Engineering Graduates - Batch 2024</p>
+                                <p class="text-sm text-gray-500">45 certificates • Processing</p>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-32 bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-500 h-2 rounded-full" style="width: 75%"></div>
+                                </div>
+                                <span class="text-sm text-gray-600">75%</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                            <div>
+                                <p class="font-medium">MBA Candidates - Q1 2024</p>
+                                <p class="text-sm text-gray-500">23 certificates • Completed</p>
+                            </div>
+                            <button class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">
+                                <i class="fas fa-download mr-1"></i>Download Report
+                            </button>
+                        </div>
+                    </div>
+                    <button class="w-full mt-4 bg-purple-500 text-white py-2 rounded-lg hover:bg-purple-600 transition">
+                        <i class="fas fa-plus mr-2"></i>Start New Batch
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Verifications -->
+        <div class="bg-white shadow rounded-lg">
+            <div class="px-6 py-4 border-b border-gray-200">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-medium text-gray-900">
+                        <i class="fas fa-history mr-2 text-gray-500"></i>Recent Verifications
+                    </h3>
+                    <div class="flex space-x-2">
+                        <select class="border border-gray-300 rounded-lg px-3 py-1 text-sm">
+                            <option>All Status</option>
+                            <option>Verified</option>
+                            <option>Flagged</option>
+                            <option>Pending</option>
+                        </select>
+                        <button class="bg-blue-500 text-white px-4 py-1 rounded-lg text-sm hover:bg-blue-600 transition">
+                            <i class="fas fa-filter mr-1"></i>Filter
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Candidate</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Certificate</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Institution</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Confidence</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
+                                        <span class="text-blue-600 font-medium">JS</span>
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-gray-900">John Smith</div>
+                                        <div class="text-sm text-gray-500">Software Engineer</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="text-sm text-gray-900">B.Tech Computer Science</div>
+                                <div class="text-sm text-gray-500">2020-2024</div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">IIT Delhi</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
+                                    <i class="fas fa-check-circle mr-1"></i>Verified
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="w-16 bg-gray-200 rounded-full h-2 mr-2">
+                                        <div class="bg-green-500 h-2 rounded-full" style="width: 95%"></div>
+                                    </div>
+                                    <span class="text-sm text-gray-600">95%</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024-01-15</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                <button class="text-blue-600 hover:text-blue-900 mr-3">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="text-green-600 hover:text-green-900 mr-3">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="text-gray-600 hover:text-gray-900">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center">
+                                        <span class="text-purple-600 font-medium">AD</span>
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-gray-900">Alice Davis</div>
+                                        <div class="text-sm text-gray-500">Marketing Manager</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="text-sm text-gray-900">MBA Marketing</div>
+                                <div class="text-sm text-gray-500">2022-2024</div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">IIM Bangalore</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-red-100 text-red-800">
+                                    <i class="fas fa-exclamation-triangle mr-1"></i>Flagged
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="w-16 bg-gray-200 rounded-full h-2 mr-2">
+                                        <div class="bg-red-500 h-2 rounded-full" style="width: 45%"></div>
+                                    </div>
+                                    <span class="text-sm text-gray-600">45%</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024-01-14</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                <button class="text-blue-600 hover:text-blue-900 mr-3">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="text-red-600 hover:text-red-900 mr-3">
+                                    <i class="fas fa-flag"></i>
+                                </button>
+                                <button class="text-gray-600 hover:text-gray-900">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="px-6 py-4 border-t border-gray-200">
+                <div class="flex justify-between items-center">
+                    <p class="text-sm text-gray-700">Showing 1 to 10 of 97 results</p>
+                    <div class="flex space-x-2">
+                        <button class="px-3 py-1 border border-gray-300 rounded-lg text-sm hover:bg-gray-50">Previous</button>
+                        <button class="px-3 py-1 bg-blue-500 text-white rounded-lg text-sm">1</button>
+                        <button class="px-3 py-1 border border-gray-300 rounded-lg text-sm hover:bg-gray-50">2</button>
+                        <button class="px-3 py-1 border border-gray-300 rounded-lg text-sm hover:bg-gray-50">3</button>
+                        <button class="px-3 py-1 border border-gray-300 rounded-lg text-sm hover:bg-gray-50">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Verification Modal -->
+    <div id="verificationModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-screen overflow-y-auto">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-medium text-gray-900">Certificate Verification Details</h3>
+                        <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <!-- Modal content will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // File upload handling
+        document.getElementById('certificateUpload').addEventListener('change', function(e) {
+            const files = e.target.files;
+            if (files.length > 0) {
+                console.log('Files selected:', files.length);
+                // Handle file upload logic here
+            }
+        });
+
+        // Modal functions
+        function openModal() {
+            document.getElementById('verificationModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('verificationModal').classList.add('hidden');
+        }
+
+        // Simulate real-time updates
+        function updateStats() {
+            // This would connect to your backend API
+            console.log('Updating dashboard stats...');
+        }
+
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            updateStats();
+            // Set up periodic updates
+            setInterval(updateStats, 30000); // Update every 30 seconds
+        });
+    </script>
+</body>
+</html>

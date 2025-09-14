@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institution Portal - Certificate Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="gradient-bg shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-white text-xl font-bold">
+                            <i class="fas fa-university mr-2"></i>Institution Portal
+                        </h1>
+                        <p class="text-indigo-200 text-sm">Indian Institute of Technology, Delhi</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="text-white text-right">
+                        <p class="font-medium">Dr. Rajesh Kumar</p>
+                        <p class="text-indigo-200 text-sm">Registrar</p>
+                    </div>
+                    <button class="bg-white bg-opacity-20 text-white px-4 py-2 rounded-lg hover:bg-opacity-30 transition">
+                        <i class="fas fa-cog mr-2"></i>Settings
+                    </button>
+                    <button class="bg-white bg-opacity-20 text-white px-4 py-2 rounded-lg hover:bg-opacity-30 transition">
+                        <i class="fas fa-sign-out-alt mr-2"></i>Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <!-- Dashboard Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white overflow-hidden shadow rounded-lg card-hover">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-graduation-cap text-3xl text-indigo-500"></i>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">Total Certificates</dt>
+                                <dd class="text-lg font-medium text-gray-900">15,847</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white overflow-hidden shadow rounded-lg card-hover">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-shield-alt text-3xl text-green-500"></i>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">Verified Today</dt>
+                                <dd class="text-lg font-medium text-gray-900">342</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white overflow-hidden shadow rounded-lg card-hover">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-users text-3xl text-blue-500"></i>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">Active Students</dt>
+                                <dd class="text-lg font-medium text-gray-900">8,234</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white overflow-hidden shadow rounded-lg card-hover">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-chart-line text-3xl text-purple-500"></i>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">Verification Rate</dt>
+                                <dd class="text-lg font-medium text-gray-900">98.7%</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Actions -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+            <!-- Certificate Management -->
+            <div class="bg-white shadow rounded-lg card-hover">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h3 class="text-lg font-medium text-gray-900">
+                        <i class="fas fa-certificate mr-2 text-indigo-500"></i>Certificate Management
+                    </h3>
+                </div>
+                <div class="p-6 space-y-4">
+                    <button class="w-full bg-indigo-500 text-white py-3 rounded-lg hover:bg-indigo-600 transition flex items-center justify-center">
+                        <i class="fas fa-plus mr-2"></i>Issue New Certificate
+                    </button>
+                    <button class="w-full bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition flex items-center justify-center">
+                        <i class="fas fa-upload mr-2"></i>Bulk Upload Certificates
+                    </button>
+                    <button class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition flex items-center justify-center">
+                        <i class="fas fa-search mr-2"></i>Search Certificates
+                    </button>
+                    <button class="w-full bg-purple-500 text-white py-3 rounded-lg hover:bg-purple-600 transition flex items-center justify-center">
+                        <i class="fas fa-cog mr-2"></i>Certificate Templates
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bulk Operations -->
+            <div class="bg-white shadow rounded-lg card-hover">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h3 class="text-lg font-medium text-gray-900">
+                        <i class="fas fa-layer-group mr-2 text-green-500"></i>Bulk Operations
+                    </h3>
+                </div>
+                <div class="p-6">
+                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-indigo-400 transition">
+                        <i class="fas fa-file-excel text-3xl text-green-500 mb-3"></i>
+                        <p class="text-gray-600 mb-3">Upload Excel/CSV file with certificate data</p>
+                        <input type="file" id="bulkUpload" class="hidden" accept=".xlsx,.xls,.csv">
+                        <button onclick="document.getElementById('bulkUpload').click()" 
+                                class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition">
+                            Choose File
+                        </button>
+                    </div>
+                    <div class="mt-4 space-y-2">
+                        <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                            <div>
+                                <p class="font-medium text-sm">Engineering Batch 2024</p>
+                                <p class="text-xs text-gray-500">1,247 certificates</p>
+                            </div>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Completed</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                            <div>
+                                <p class="font-medium text-sm">MBA Batch 2024</p>
+                                <p class="text-xs text-gray-500">89 certificates</p>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-16 bg-gray-200 rounded-full h-1">
+                                    <div class="bg-blue-500 h-1 rounded-full" style="width: 60%"></div>
+                                </div>
+                                <span class="text-xs text-gray-600">60%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Digital Signatures -->
+            <div class="bg-white shadow rounded-lg card-hover">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h3 class="text-lg font-medium text-gray-900">
+                        <i class="fas fa-signature mr-2 text-purple-500"></i>Digital Signatures
+                    </h3>
+                </div>
+                <div class="p-6 space-y-4">
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-medium text-purple-900">Registrar Signature</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Active</span>
+                        </div>
+                        <p class="text-sm text-purple-700">Valid until: Dec 31, 2024</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-medium text-blue-900">Dean Signature</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Active</span>
+                        </div>
+                        <p class="text-sm text-blue-700">Valid until: Dec 31, 2024</p>
+                    </div>
+                    <button class="w-full bg-purple-500 text-white py-2 rounded-lg hover:bg-purple-600 transition">
+                        <i class="fas fa-key mr-2"></i>Manage Signatures
+                    </button>
+                    <button class="w-full bg-indigo-500 text-white py-2 rounded-lg hover:bg-indigo-600 transition">
+                        <i class="fas fa-qrcode mr-2"></i>Generate QR Codes
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Certificates -->
+        <div class="bg-white shadow rounded-lg mb-8">
+            <div class="px-6 py-4 border-b border-gray-200">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-medium text-gray-900">
+                        <i class="fas fa-clock mr-2 text-gray-500"></i>Recent Certificates
+                    </h3>
+                    <div class="flex space-x-2">
+                        <select class="border border-gray-300 rounded-lg px-3 py-1 text-sm">
+                            <option>All Departments</option>
+                            <option>Computer Science</option>
+                            <option>Electrical Engineering</option>
+                            <option>Mechanical Engineering</option>
+                        </select>
+                        <button class="bg-indigo-500 text-white px-4 py-1 rounded-lg text-sm hover:bg-indigo-600 transition">
+                            <i class="fas fa-download mr-1"></i>Export
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Student</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Certificate</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Department</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Issue Date</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Verifications</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="h-10 w-10 rounded-full bg-indigo-100 flex items-center justify-center">
+                                        <span class="text-indigo-600 font-medium">AS</span>
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-gray-900">Amit Sharma</div>
+                                        <div class="text-sm text-gray-500">2020CS001</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="text-sm text-gray-900">B.Tech Computer Science</div>
+                                <div class="text-sm text-gray-500">CGPA: 9.2</div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Computer Science</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024-01-15</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
+                                    <i class="fas fa-check-circle mr-1"></i>Active
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="text-sm text-gray-900">23 times</div>
+                                <div class="text-sm text-gray-500">Last: 2 days ago</div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                <button class="text-indigo-600 hover:text-indigo-900 mr-3">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="text-blue-600 hover:text-blue-900 mr-3">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="text-green-600 hover:text-green-900 mr-3">
+                                    <i class="fas fa-qrcode"></i>
+                                </button>
+                                <button class="text-purple-600 hover:text-purple-900">
+                                    <i class="fas fa-signature"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="h-10 w-10 rounded-full bg-pink-100 flex items-center justify-center">
+                                        <span class="text-pink-600 font-medium">PG</span>
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-gray-900">Priya Gupta</div>
+                                        <div class="text-sm text-gray-500">2020EE045</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="text-sm text-gray-900">B.Tech Electrical Engineering</div>
+                                <div class="text-sm text-gray-500">CGPA: 8.7</div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Electrical Engineering</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024-01-14</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                                    <i class="fas fa-clock mr-1"></i>Pending
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="text-sm text-gray-900">0 times</div>
+                                <div class="text-sm text-gray-500">Not verified yet</div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                <button class="text-indigo-600 hover:text-indigo-900 mr-3">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="text-blue-600 hover:text-blue-900 mr-3">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="text-green-600 hover:text-green-900 mr-3">
+                                    <i class="fas fa-qrcode"></i>
+                                </button>
+                                <button class="text-purple-600 hover:text-purple-900">
+                                    <i class="fas fa-signature"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Analytics Dashboard -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Verification Trends -->
+            <div class="bg-white shadow rounded-lg card-hover">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h3 class="text-lg font-medium text-gray-900">
+                        <i class="fas fa-chart-line mr-2 text-blue-500"></i>Verification Trends
+                    </h3>
+                </div>
+                <div class="p-6">
+                    <div class="h-64 bg-gray-50 rounded-lg flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-chart-area text-4xl text-gray-400 mb-4"></i>
+                            <p class="text-gray-500">Verification trends chart would be displayed here</p>
+                            <p class="text-sm text-gray-400">Integration with Chart.js or similar library</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Department Statistics -->
+            <div class="bg-white shadow rounded-lg card-hover">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h3 class="text-lg font-medium text-gray-900">
+                        <i class="fas fa-chart-pie mr-2 text-purple-500"></i>Department Statistics
+                    </h3>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-700">Computer Science</span>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-24 bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-500 h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                                <span class="text-sm text-gray-600">4,247</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-700">Electrical Engineering</span>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-24 bg-gray-200 rounded-full h-2">
+                                    <div class="bg-green-500 h-2 rounded-full" style="width: 70%"></div>
+                                </div>
+                                <span class="text-sm text-gray-600">3,521</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-700">Mechanical Engineering</span>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-24 bg-gray-200 rounded-full h-2">
+                                    <div class="bg-purple-500 h-2 rounded-full" style="width: 65%"></div>
+                                </div>
+                                <span class="text-sm text-gray-600">3,234</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-700">Civil Engineering</span>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-24 bg-gray-200 rounded-full h-2">
+                                    <div class="bg-yellow-500 h-2 rounded-full" style="width: 55%"></div>
+                                </div>
+                                <span class="text-sm text-gray-600">2,789</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-700">Chemical Engineering</span>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-24 bg-gray-200 rounded-full h-2">
+                                    <div class="bg-red-500 h-2 rounded-full" style="width: 45%"></div>
+                                </div>
+                                <span class="text-sm text-gray-600">2,056</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificate Issue Modal -->
+    <div id="certificateModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg shadow-xl max-w-2xl w-full">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-medium text-gray-900">Issue New Certificate</h3>
+                        <button onclick="closeCertificateModal()" class="text-gray-400 hover:text-gray-600">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <form class="space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Student Name</label>
+                                <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-indigo-500 focus:border-indigo-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Roll Number</label>
+                                <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-indigo-500 focus:border-indigo-500">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Department</label>
+                                <select class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-indigo-500 focus:border-indigo-500">
+                                    <option>Computer Science</option>
+                                    <option>Electrical Engineering</option>
+                                    <option>Mechanical Engineering</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Degree</label>
+                                <select class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-indigo-500 focus:border-indigo-500">
+                                    <option>B.Tech</option>
+                                    <option>M.Tech</option>
+                                    <option>PhD</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">CGPA</label>
+                                <input type="number" step="0.01" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-indigo-500 focus:border-indigo-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Graduation Date</label>
+                                <input type="date" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-indigo-500 focus:border-indigo-500">
+                            </div>
+                        </div>
+                        <div class="flex justify-end space-x-3 pt-4">
+                            <button type="button" onclick="closeCertificateModal()" class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">
+                                Cancel
+                            </button>
+                            <button type="submit" class="px-4 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600">
+                                Issue Certificate
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal functions
+        function openCertificateModal() {
+            document.getElementById('certificateModal').classList.remove('hidden');
+        }
+
+        function closeCertificateModal() {
+            document.getElementById('certificateModal').classList.add('hidden');
+        }
+
+        // File upload handling
+        document.getElementById('bulkUpload').addEventListener('change', function(e) {
+            const files = e.target.files;
+            if (files.length > 0) {
+                console.log('Bulk upload file selected:', files[0].name);
+                // Handle bulk upload logic here
+            }
+        });
+
+        // Add event listeners to buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            // Issue new certificate button
+            document.querySelector('button:has(i.fa-plus)').addEventListener('click', openCertificateModal);
+            
+            // Update dashboard stats
+            updateInstitutionStats();
+            setInterval(updateInstitutionStats, 60000); // Update every minute
+        });
+
+        function updateInstitutionStats() {
+            // This would connect to your backend API
+            console.log('Updating institution dashboard stats...');
+        }
+    </script>
+</body>
+</html>
