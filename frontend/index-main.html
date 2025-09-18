@@ -375,8 +375,6 @@
         // Add loading animation for portal access
         document.querySelectorAll('.card-hover').forEach(card => {
             card.addEventListener('click', function() {
-                if (this.onclick) return; // Skip if onclick is already defined
-                
                 const button = this.querySelector('button');
                 if (button) {
                     button.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Loading...';

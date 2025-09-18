@@ -17,20 +17,13 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 8
     
     # CORS settings
-    BACKEND_CORS_ORIGINS: List[AnyHttpUrl] = [
-        "http://localhost:3000",
-        "http://localhost:8000",
-        "http://localhost:8001",
-        "http://localhost:8080",
-    ]
-
-    @field_validator("BACKEND_CORS_ORIGINS", mode="before")
-    def assemble_cors_origins(cls, v: Union[str, List[str]]) -> Union[List[str], str]:
-        if isinstance(v, str) and not v.startswith("["):
-            return [i.strip() for i in v.split(",")]
-        elif isinstance(v, (list, str)):
-            return v
-        raise ValueError(v)
+    BACKEND_CORS_ORIGINS: str = "http://localhost:3000,http://localhost:8000,http://localhost:8001,http://localhost:8080"
+    
+    def get_cors_origins(self) -> List[str]:
+        """Parse CORS origins from string to list."""
+        if isinstance(self.BACKEND_CORS_ORIGINS, str):
+            return [origin.strip() for origin in self.BACKEND_CORS_ORIGINS.split(",")]
+        return self.BACKEND_CORS_ORIGINS
 
     # MongoDB settings
     MONGO_URL: str = os.getenv("MONGO_URL", "mongodb://localhost:27017")
